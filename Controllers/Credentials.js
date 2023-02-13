@@ -25,7 +25,7 @@ function verifyToken(token, secretKey) {
 }
 const CredentialController = {
   Signup: (request, response) => {
-    const { firstname, lastname, Email, Password, mobilenumber, dob } =
+    const { firstname, lastname, Email, Password, mobilenumber } =
       request.body;
     console.log(request.body);
     if (
@@ -33,8 +33,7 @@ const CredentialController = {
       !lastname ||
       !Email ||
       !Password ||
-      !mobilenumber ||
-      !dob
+      !mobilenumber
     ) {
       response.json({
         message: "Requires fields are missing",
@@ -50,7 +49,6 @@ const CredentialController = {
       last_name: lastname,
       email: Email,
       password: Hashpassword,
-      dob: dob,
       mobile_number: mobilenumber,
     };
     SignupModal.findOne({ email: Email }, (error, user) => {

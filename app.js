@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5500;
 app.use(express.json());
 app.use(router)
 const DBURI =
-"mongodb+srv://admin:admin@cluster0.vaqe8lu.mongodb.net/Hackathon"
+"mongodb+srv://admin:admin@cluster0.vaqe8lu.mongodb.net/Plantify"
 mongoose
   .connect(DBURI)
   .then((res) => console.log("DB Connected"))
